@@ -11,7 +11,8 @@
         android:textSize="25sp"
         android:textIsSelectable="false"
         android:textStyle="bold"
-        android:textColor="#100205" />
+        android:textColor="#100205"
+        android:layout_marginTop="20dp" />
 
     <EditText
         android:layout_width="match_parent"
@@ -36,7 +37,8 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:id="@+id/nuevo_linear">
 
         <ScrollView
             android:layout_width="wrap_content"
