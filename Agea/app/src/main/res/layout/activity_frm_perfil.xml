@@ -19,8 +19,9 @@
         android:inputType="textPersonName"
         android:ems="10"
         android:id="@+id/etNombrePerfil"
-        android:textSize="20sp"
-        android:hint="@string/hintNombrePerfil" />
+        android:textSize="30dp"
+        android:hint="@string/hintNombrePerfil"
+        android:background="@drawable/back" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -29,7 +30,8 @@
         android:id="@+id/textView2"
         android:textSize="25sp"
         android:textColor="#010100"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_marginTop="20dp" />
 
     <LinearLayout
         android:orientation="vertical"

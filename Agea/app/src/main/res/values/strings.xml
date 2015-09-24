@@ -17,4 +17,11 @@
     <string name="lblCheckPagos">Pagos</string>
     <string name="lblCheckReportes">Reportes</string>
     <string name="lblCheckAsistencias">Asistencias</string>
+
+    <!-- Title Menus -->
+    <string name="lblBuscarPerfil">Buscar</string>
+    <string name="lblNuevoPerfil">Nuevo</string>
+    <string name="lblGuardarPerfil">Guardar</string>
+    <string name="lblEliminarPerfil">Eliminar</string>
+    <string name="lblSalirPerfil">Salir</string>
 </resources>

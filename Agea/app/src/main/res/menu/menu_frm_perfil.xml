@@ -1,5 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
 
+    <item
+        android:id="@+id/buscar_registro_perfil"
+        android:icon="@drawable/ic_action_search"
+        app:showAsAction="always"
+        android:title="@string/lblBuscarPerfil">
+    </item>
+
+    <item
+        android:id="@+id/nuevo_registro_perfil"
+        android:icon="@drawable/ic_action_new"
+        app:showAsAction="always"
+        android:title="@string/lblNuevoPerfil">
+    </item>
+
+    <item
+        android:id="@+id/eliminar_registro_perfil"
+        android:icon="@drawable/ic_action_new"
+        app:showAsAction="never"
+        android:title="@string/lblEliminarPerfil">
+    </item>
+
+    <item
+        android:id="@+id/salir_registro_perfil"
+        android:icon="@drawable/ic_action_new"
+        app:showAsAction="never"
+        android:title="@string/lblSalirPerfil">
+    </item>
 
 </menu>
