@@ -16,11 +16,11 @@
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="46dp"
         android:inputType="textPersonName"
         android:ems="10"
         android:id="@+id/etNombrePerfil"
-        android:textSize="30dp"
+        android:textSize="25dp"
         android:hint="@string/hintNombrePerfil"
         android:background="@drawable/back" />
 
@@ -36,7 +36,7 @@
 
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="match_parent"
         android:id="@+id/nuevo_linear">
 
