@@ -1,6 +1,6 @@
 package com.example.agea;
 
-public class PerfilVO {
+public class entPerfil {
     private int perId;
     private String perNombre;
     private String perPermiso;

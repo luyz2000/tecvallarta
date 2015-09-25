@@ -23,5 +23,6 @@
     <string name="lblNuevoPerfil">Nuevo</string>
     <string name="lblGuardarPerfil">Guardar</string>
     <string name="lblEliminarPerfil">Eliminar</string>
+    <string name="lblCancelarPerfil">Cancelar</string>
     <string name="lblSalirPerfil">Salir</string>
 </resources>

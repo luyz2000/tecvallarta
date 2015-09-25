@@ -15,7 +15,9 @@ public class FrmPerfil extends ActionBarActivity {
 
     private EditText etNombrePerfil;
     private CheckBox cb1, cb2, cb3, cb4, cb5, cb6, cb7, cb8, cb9;
-    private int opcion;
+    private int opcion = 0;
+    private entPerfil perfil = new entPerfil();
+    private String privilegio;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +43,16 @@ public class FrmPerfil extends ActionBarActivity {
             case R.id.nuevo_registro_perfil:
                 nuevoPerfil();
                 return true;
+            case R.id.guardar_registro_perfil:
+                if(opcion == 1) {
+
+                } else {
+                    Toast.makeText(getApplicationContext(), "NO HAZ SELECCIONADO LA OPCION DE NUEVO REGISTRO", Toast.LENGTH_LONG).show();
+                }
+                return true;
             case R.id.eliminar_registro_perfil:
+                return true;
+            case R.id.cancelar_registro_perfil:
                 return true;
             case R.id.salir_registro_perfil:
                 AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
@@ -67,6 +78,7 @@ public class FrmPerfil extends ActionBarActivity {
     }
 
     private void initVariables(){
+        opcion = 0;
         etNombrePerfil = (EditText) findViewById(R.id.etNombrePerfil);
         cb1 = (CheckBox) findViewById(R.id.chUsuarios);
         cb2 = (CheckBox) findViewById(R.id.chActividades);

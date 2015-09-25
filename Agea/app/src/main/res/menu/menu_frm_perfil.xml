@@ -10,7 +10,6 @@
         android:title="@string/lblBuscarPerfil"
         android:orderInCategory="1">
     </item>
-
     <item
         android:id="@+id/nuevo_registro_perfil"
         android:icon="@drawable/ic_action_new"
@@ -18,21 +17,33 @@
         android:title="@string/lblNuevoPerfil"
         android:orderInCategory="2">
     </item>
-
+    <item
+        android:id="@+id/guardar_registro_perfil"
+        android:icon="@drawable/ic_action_save"
+        app:showAsAction="always"
+        android:title="@string/lblGuardarPerfil"
+        android:orderInCategory="3">
+    </item>
     <item
         android:id="@+id/eliminar_registro_perfil"
         android:icon="@drawable/ic_action_new"
         app:showAsAction="never"
         android:title="@string/lblEliminarPerfil"
-        android:orderInCategory="3">
+        android:orderInCategory="4">
     </item>
-
+    <item
+        android:id="@+id/cancelar_registro_perfil"
+        android:icon="@drawable/ic_action_remove"
+        app:showAsAction="never"
+        android:title="@string/lblCancelarPerfil"
+        android:orderInCategory="5">
+    </item>
     <item
         android:id="@+id/salir_registro_perfil"
         android:icon="@drawable/ic_action_new"
         app:showAsAction="never"
         android:title="@string/lblSalirPerfil"
-        android:orderInCategory="4">
+        android:orderInCategory="6">
     </item>
 
 </menu>
