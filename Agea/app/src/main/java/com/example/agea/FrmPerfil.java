@@ -36,10 +36,10 @@ public class FrmPerfil extends ActionBarActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case R.id.buscar_registro_perfil:
-                nuevoPerfil();
+
                 return true;
             case R.id.nuevo_registro_perfil:
-
+                nuevoPerfil();
                 return true;
             case R.id.eliminar_registro_perfil:
                 return true;
@@ -84,6 +84,7 @@ public class FrmPerfil extends ActionBarActivity {
     private void nuevoPerfil(){
         opcion = 1;
         limpiarCampos();
+        activarCampos(true);
     }
 
     private void limpiarCampos(){
