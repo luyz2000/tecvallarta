@@ -3,4 +3,25 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="lblNombrePerfil">Nombre de Perfil</string>
+    <string name="hintNombrePerfil">Ej: Administradores</string>
+    <string name="lblModulos">Modulos</string>
+
+    <!-- CheckBox -->
+    <string name="lblCheckUsuario">Usuarios</string>
+    <string name="lblCheckPerfiles">Perfiles</string>
+    <string name="lblCheckActividades">Actividades</string>
+    <string name="lblCheckGestores">Gestores</string>
+    <string name="lblCheckParticipantes">Participantes</string>
+    <string name="lblCheckConstancias">Constancias</string>
+    <string name="lblCheckPagos">Pagos</string>
+    <string name="lblCheckReportes">Reportes</string>
+    <string name="lblCheckAsistencias">Asistencias</string>
+
+    <!-- Title Menus -->
+    <string name="lblBuscarPerfil">Buscar</string>
+    <string name="lblNuevoPerfil">Nuevo</string>
+    <string name="lblGuardarPerfil">Guardar</string>
+    <string name="lblEliminarPerfil">Eliminar</string>
+    <string name="lblSalirPerfil">Salir</string>
 </resources>

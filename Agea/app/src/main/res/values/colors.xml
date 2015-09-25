@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="tinto">#9C0F0C</color>
+    <color name="gris_claro">#F2F2F2</color>
+    <color name="negro">#000000</color>
+    <color name="gris_oscuro">#444A49</color>
+    <color name="gris">#BDBDBD</color>
+    <color name="blanco">#FFFFFF</color>
+</resources>
