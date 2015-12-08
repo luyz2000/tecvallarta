@@ -1,14 +1,17 @@
-area de miembros
-http://www.000webhost.com/
+https://members.000webhost.com/login
 
-correo: bboyoswaldo@gmail.com
-contraseña: michaelj1
+correo: ageaitspv@gmail.com
+contraseÃ±a: ageaitspv2015
 
-pagina web: http://ageaitspv.comze.com/
+http://ageaitspv.netau.net/
 
-Password server agea85203
+$mysql_host = "mysql7.000webhost.com";
+$mysql_database = "a3608685_ageaits";
+$mysql_user = "a3608685_ageaits";
+$mysql_password = "ageaitspv2015";
 
-$mysql_host = "mysql5.000webhost.com";
-$mysql_database = "a1050813_ageaits";
-$mysql_user = "a1050813_its";
-$mysql_password = "agea85203";
+define("DB_HOST", "mysql7.000webhost.com");
+define("DB_USER", "a3608685_ageaits");
+define("DB_PASSWORD", "ageaitspv2015");
+define("DB_DATABASE", "a3608685_ageaits");
+
