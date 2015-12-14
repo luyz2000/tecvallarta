@@ -261,7 +261,7 @@ public class FrmPerfil extends ActionBarActivity {
 
             @Override
             public void onResponse(String response) {
-                //Log.d(TAG, "Register Response: " + response.toString());
+                // Log.d(TAG, "Register Response: " + response.toString());
                 pDialog.hide();
 
                 try {
