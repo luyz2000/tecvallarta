@@ -1,4 +1,4 @@
-https://members.000webhost.com/login
+﻿https://members.000webhost.com/login
 
 correo: ageaitspv@gmail.com
 contraseña: ageaitspv2015
@@ -14,4 +14,3 @@ define("DB_HOST", "mysql7.000webhost.com");
 define("DB_USER", "a3608685_ageaits");
 define("DB_PASSWORD", "ageaitspv2015");
 define("DB_DATABASE", "a3608685_ageaits");
-
