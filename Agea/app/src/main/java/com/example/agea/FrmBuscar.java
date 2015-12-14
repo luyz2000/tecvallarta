@@ -20,5 +20,6 @@ public class FrmBuscar extends ActionBarActivity{
 
     private void initVariable(){
         lvPerfil = (ListView) findViewById(R.id.lvPerfiles);
+
     }
 }
