@@ -1,6 +1,7 @@
 package com.example.agea;
 
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -31,6 +32,7 @@ public class FrmPerfil extends ActionBarActivity {
     private String[] checked = new String[9];
     private entPerfil perfil = new entPerfil();
     private String privilegio, id;
+    private ProgressDialog pDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -251,15 +253,16 @@ public class FrmPerfil extends ActionBarActivity {
         // Tag used to cancel the request
         String tag_string_req = "req_eliminar_perfil";
 
-        //pDialog.setMessage("Registrando ...");
-        //showDialog();
+        pDialog = new ProgressDialog(this);
+        pDialog.setMessage("Registrando ...");
+        pDialog.show();
 
         StringRequest strReq = new StringRequest(Request.Method.POST, AppConfig.URL_DELETE_PERFIL, new Response.Listener<String>() {
 
             @Override
             public void onResponse(String response) {
-                // Log.d(TAG, "Register Response: " + response.toString());
-                // hideDialog();
+                //Log.d(TAG, "Register Response: " + response.toString());
+                pDialog.hide();
 
                 try {
                     JSONObject jObj = new JSONObject(response);
