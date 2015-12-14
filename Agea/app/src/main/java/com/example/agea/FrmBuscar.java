@@ -10,10 +10,13 @@ import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
+import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -55,35 +58,25 @@ public class FrmBuscar extends ActionBarActivity{
         pDialog.setMessage("Cargando ...");
         pDialog.show();
 
-        JsonArrayRequest jreq = new JsonArrayRequest(AppConfig.URL_GET_PERFIL,
-                new Response.Listener<JSONArray>() {
+        RequestQueue queue = Volley.newRequestQueue(this);
+        JsonArrayRequest request = new JsonArrayRequest(AppConfig.URL_GET_PERFIL, new Response.Listener<JSONObject>() {
 
-                    @Override
-                    public void onResponse(JSONArray response) {
+            @Override
+            public void onResponse(JSONObject response) {
+                try {
 
-                        try{
-                            JSONArray jsonArray = response.getJSONArray(1);
-
-                            for (int i = 0; i < response.length(); i++) {
-                                JSONObject c = jsonArray.getJSONObject(i);
-                                String name = c.getString("nombre");
-                                items.add(name);
-                            }
-                        } catch (JSONException e){
-                            e.printStackTrace();
-                            Log.e("JSONException", "Query Error: " + e.getMessage());
-                        }
-                        pDialog.dismiss();
-                        adapter.notifyDataSetChanged();
-                    }
-                }, new Response.ErrorListener() {
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Log.e(tag_string_req, "Registration Error: " + error.getMessage());
+                Log.d("VolleyTest", error.getMessage());
             }
         });
 
-        AppController.getInstance().addToRequestQueue(jreq, tag_string_req);
+        AppController.getInstance().addToRequestQueue(request, tag_string_req);
     }
 
 }
