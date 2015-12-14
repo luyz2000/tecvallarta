@@ -3,12 +3,16 @@ package com.example.agea;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.StringRequest;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -33,8 +37,7 @@ public class FrmBuscar extends ActionBarActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_frm_buscar);
         initVariable();
-
-
+        getPerfil();
     }
 
     private void initVariable(){
@@ -46,47 +49,42 @@ public class FrmBuscar extends ActionBarActivity{
 
     private void getPerfil(){
         // Tag used to cancel the request
-        String tag_string_req = "req_eliminar_perfil";
+        final String tag_string_req = "req_get_perfil";
 
         pDialog = new ProgressDialog(this);
-        pDialog.setMessage("Registrando ...");
+        pDialog.setMessage("Cargando ...");
         pDialog.show();
 
-        StringRequest strReq = new StringRequest(Request.Method.POST, AppConfig.URL_DELETE_PERFIL, new Response.Listener<JSONArray>() {
+        JsonArrayRequest jreq = new JsonArrayRequest(AppConfig.URL_GET_PERFIL,
+                new Response.Listener<JSONArray>() {
 
-            @Override
-            public void onResponse(JSONArray response) {
-                // Log.d(TAG, "Register Response: " + response.toString());
-                pDialog.hide();
-                try {
-                    JSONObject jObj = null;
-                    for (int x = 0;x<response.length();x++) {
-                        jObj = response.getJSONObject(x);
-                        items.add(jObj.getString("perNombre"));
+                    @Override
+                    public void onResponse(JSONArray response) {
+
+                        try{
+                            JSONArray jsonArray = response.getJSONArray(1);
+
+                            for (int i = 0; i < response.length(); i++) {
+                                JSONObject c = jsonArray.getJSONObject(i);
+                                String name = c.getString("nombre");
+                                items.add(name);
+                            }
+                        } catch (JSONException e){
+                            e.printStackTrace();
+                            Log.e("JSONException", "Query Error: " + e.getMessage());
+                        }
+                        pDialog.dismiss();
+                        adapter.notifyDataSetChanged();
                     }
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-                adapter.notifyDataSetChanged();
-            }
-        }, new Response.ErrorListener() {
+                }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                //Log.e(TAG, "Registration Error: " + error.getMessage());
-                Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_LONG).show();
-                //hideDialog();
+                Log.e(tag_string_req, "Registration Error: " + error.getMessage());
             }
-        }) {
-            @Override
-            protected Map<String, String> getParams() {
-                // Posting params to register url
-                Map<String, String> params = new HashMap<String, String>();
-                params.put("id", id);
-                return params;
-            }
-        };
-        // Adding request to request queue
-        AppController.getInstance().addToRequestQueue(strReq, tag_string_req);
+        });
+
+        AppController.getInstance().addToRequestQueue(jreq, tag_string_req);
     }
+
 }
 

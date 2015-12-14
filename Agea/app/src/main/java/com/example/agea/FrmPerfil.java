@@ -3,6 +3,7 @@ package com.example.agea;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
@@ -53,7 +54,8 @@ public class FrmPerfil extends ActionBarActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.buscar_registro_perfil:
-                opcion = 3;
+                Intent i = new Intent(this, FrmBuscar.class);
+                startActivity(i);
                 return true;
             case R.id.nuevo_registro_perfil:
                 nuevoPerfil();

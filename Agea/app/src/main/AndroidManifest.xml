@@ -19,5 +19,6 @@
                 <category android:name="ANDROID.INTENT.CATEGORY.LAUNCHER"></category>
             </intent-filter>
         </activity>
+        <activity android:name=".FrmBuscar"/>
     </application>
 </manifest>
