@@ -8,6 +8,7 @@ public class AppConfig {
 
     public static String URL_REGISTER_PERFIL="http://ageaitspv.netau.net/regPerfil.php";
     public static String URL_DELETE_PERFIL="http://ageaitspv.netau.net/eliPerfil.php";
+    public static String URL_GET_PERFIL="http://ageaitspv.netau.net/getPerfiles.php";
 
     public static String URL_PAY="http://ageaitspv.netau.net/register.php";
 }
