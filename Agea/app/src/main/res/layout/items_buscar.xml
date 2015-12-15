@@ -8,5 +8,6 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Medium Text"
-        android:id="@+id/tvNombrePerfil" />
+        android:id="@+id/tvNombrePerfil"
+        android:textStyle="bold" />
 </LinearLayout>
