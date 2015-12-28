@@ -1,5 +1,4 @@
 <?php
-
 require_once 'include/db_function_perfiles.php';
 $db = new db_function_perfiles();
 
@@ -7,7 +6,6 @@ $db = new db_function_perfiles();
 $response = array("error" => FALSE);
 
 if (isset( $_POST['nombre']) && isset( $_POST['permiso'])) {
- 
    // Request type is Register new user
         $nombre = $_POST['nombre'];
         $permiso = $_POST['permiso'];
@@ -25,5 +23,5 @@ if (isset( $_POST['nombre']) && isset( $_POST['permiso'])) {
                 $response["error_msg"] = "Error occured in Registartion";
                 echo json_encode($response);
             }
-}
+		}
 ?>

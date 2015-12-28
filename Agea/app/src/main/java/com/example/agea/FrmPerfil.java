@@ -194,60 +194,41 @@ public class FrmPerfil extends ActionBarActivity {
     }
 
     private void registerPerfil(final String nombre, final String permiso) {
-        // Tag used to cancel the request
         String tag_string_req = "req_register_perfil";
-
-        //pDialog.setMessage("Registrando ...");
-        //showDialog();
-
+        pDialog.setMessage("Registrando ...");
+        pDialog.show();
         StringRequest strReq = new StringRequest(Request.Method.POST, AppConfig.URL_REGISTER_PERFIL, new Response.Listener<String>() {
-
             @Override
             public void onResponse(String response) {
-                // Log.d(TAG, "Register Response: " + response.toString());
-                // hideDialog();
-
+                pDialog.dismiss();
                 try {
                     JSONObject jObj = new JSONObject(response);
                     boolean error = jObj.getBoolean("error");
                     if (!error) {
-                        // User successfully stored in MySQL
-                        // Now store the user in sqlite
-                        //String uid = jObj.getString("uid");
-                        //String name = user.getString("name");
-
                         Toast.makeText(getApplicationContext(), "Perfil exitosamente registrado. Trata de entrar ahora!", Toast.LENGTH_LONG).show();
                     } else {
-                        // Error occurred in registration. Get the error
-                        // message
                         String errorMsg = jObj.getString("error_msg");
                         Toast.makeText(getApplicationContext(), errorMsg, Toast.LENGTH_LONG).show();
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-
             }
         }, new Response.ErrorListener() {
-
             @Override
             public void onErrorResponse(VolleyError error) {
-                //Log.e(TAG, "Registration Error: " + error.getMessage());
                 Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_LONG).show();
-                //hideDialog();
+                pDialog.dismiss();
             }
         }) {
-
             @Override
             protected Map<String, String> getParams() {
-                // Posting params to register url
                 Map<String, String> params = new HashMap<String, String>();
                 params.put("nombre", nombre);
                 params.put("permiso", permiso);
                 return params;
             }
         };
-        // Adding request to request queue
         AppController.getInstance().addToRequestQueue(strReq, tag_string_req);
     }
 
